@@ -13,29 +13,27 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(url: "https://github.com/AppLovin/AppLovin-MAX-Swift-Package.git", exact: "13.5.1"),
-        .package(url: "https://github.com/googleads/swift-package-manager-google-mobile-ads.git", exact: "12.14.0"),
+        .package(url: "https://github.com/googleads/swift-package-manager-google-mobile-ads.git", exact: "13.6.0"),
     ],
     targets: [
         .target(
             name: "REVUPMediaMaxAdapterAdManagerTarget",
             dependencies: [
                 .target(name: "REVUPMediaMaxAdapterAdManager"),
-                .target(name: "REVUPMediaMaxAdapterAdManagerMediationAdapter"),
-                .product(name: "AppLovinSDK", package: "AppLovin-MAX-Swift-Package"),
+                .target(name: "AppLovinMediationGoogleAdManagerAdapter"),
                 .product(name: "GoogleMobileAds", package: "swift-package-manager-google-mobile-ads"),
             ],
             path: "Sources"
         ),
         .binaryTarget(
             name: "REVUPMediaMaxAdapterAdManager",
-            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.0.0/REVUPMediaMaxAdapterAdManager.zip",
-            checksum: "e41c6d2ab43ee5e99447ea4df9bc536612e27e0226a4533d3009b6254a2041fc"
+            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/REVUPMediaMaxAdapterAdManager.zip",
+            checksum: "76bdd989b45486cdbaa5edb4b6ee7b7ba8e133cf1b017a4ae73649ec292cf0b7"
         ),
         .binaryTarget(
-            name: "REVUPMediaMaxAdapterAdManagerMediationAdapter",
-            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.0.0/AppLovinMediationGoogleAdManagerAdapter.xcframework.zip",
-            checksum: "94242eff8ca8600a1a76bbbe43534967c8cd9054a5199ebcfa8de4cfabf6f499"
-        ),
+            name: "AppLovinMediationGoogleAdManagerAdapter",
+            url: "https://artifacts.applovin.com/ios/com/applovin/mediation/googleadmanager-adapter/AppLovinMediationGoogleAdManagerAdapter-13.6.0.0.zip",
+            checksum: "b2530c3a0c6dc8422a9efa71680ba39448cb4369dd5281181541c4da1c4f13c1"
+        )
     ]
 )
